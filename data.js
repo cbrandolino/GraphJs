@@ -3,15 +3,11 @@ graphData = {
   [
     {
       "type" : "movies",
-      "count": 100,
-      "properties":
-      [
-        {
-          "type": "name", 
-          "count": 80, 
-          "optional": false
-        }
-      ]
+      "count": 100
+    },
+    {
+      "type" : "studios",
+      "count": 20
     },
     {
       "type" : "people",
@@ -32,6 +28,11 @@ graphData = {
         {
           "source" : "people",
           "target" : "dogs",
+          "count"  : 20
+        },
+        {
+          "source" : "studios",
+          "target" : "people",
           "count"  : 20
         }
       ]
@@ -109,6 +110,23 @@ graphData = {
           "target" : "people",
           "count"  : 40
         }
+      ]
+    },
+    {
+      "type" : "produces",
+      "count": 80,
+      "connections":
+      [
+        {
+          "source" : "studios",
+          "target" : "movies",
+          "count"  : 40
+        },
+        {
+          "source" : "people",
+          "target" : "movies",
+          "count"  : 30
+        },
       ]
     }
   ]
