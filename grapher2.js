@@ -68,7 +68,9 @@ jsgraph.prototype.drawEdges = function(cNodes, options) {
         var startNode = cNodes[e.source][0]['attrs']
         var endNode   = cNodes[e.target][0]['attrs']
         var maxFlex   = 100
-        var eachFlex  = maxFlex / edgeCounter[e.source][e.target]['index'] 
+        var eachFlex  = edgeCounter[e.source][e.target]['index'] ?
+          maxFlex /  edgeCounter[e.source][e.target]['index'] :
+          maxFlex
         var edgeFlex  = maxFlex  - eachFlex * edgeCounter[e.source][e.target]['count'] 
 
         curveApex     = (startNode.cy+endNode.cy)/2 + edgeFlex
